@@ -1,4 +1,4 @@
-# Manual Workflow tiredofit/docker-debian
+# Manual Workflow ryanwclark/docker-debian
 name: manual
 
 on:
