@@ -5,12 +5,14 @@ Stupid simple Debian build
 [![Build Status](https://img.shields.io/github/workflow/status/ryanwclark/docker-debian/build?style=flat-square)](https://github.com/ryanwclark/docker-debian/actions?query=workflow%3Abuild)
 [![Docker Stars](https://img.shields.io/docker/stars/ryanwclark/debian.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/ryanwclark/debian/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ryanwclark/debian.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/ryanwclark/debian/)
+[![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white)](https://www.debian.org/)
 
-
+* * *
+## About
 
 Dockerfile to build an [debian](https://www.debian.org/) container image to be used as a base for building other images.
 
-* Currently tracking Jessie (8), Stretch (9), Buster (10), Bullseye (11).
+* Currently tracking Jessie-slim (8), Stretch-slim (9), Buster-slim (10), Bullseye-slim (11).
 * Multi Arch Compatible for amd64, arm arm64
 * [s6 overlay](https://github.com/just-containers/s6-overlay) enabled for PID 1 init capabilities.
 * [zabbix-agent](https://zabbix.org) (Classic and Modern) for individual container monitoring.
@@ -25,6 +27,7 @@ Dockerfile to build an [debian](https://www.debian.org/) container image to be u
 
 ## Table of Contents
 
+- [About](#about)
 - [Maintainer](#maintainer)
 - [Table of Contents](#table-of-contents)
 - [Prerequisites and Assumptions](#prerequisites-and-assumptions)
@@ -68,12 +71,12 @@ docker pull ryanwclark/debian:(imagetag)
 
 The following image tags are available along with their tagged release based on what's written in the [Changelog](CHANGELOG.md):
 
-| Debian version | Tag         |
-| -------------- | ----------- |
-| `11`           | `:bullseye` |
-| `10`           | `:buster`   |
-| `9`            | `:stretch`  |
-| `8`            | `:jessie`   |
+| Debian version | Tag              |
+| -------------- | ---------------- |
+| `11`           | `:bullseye-slim` |
+| `10`           | `:buster-slim`   |
+| `9`            | `:stretch-slim`  |
+| `8`            | `:jessie-slim`   |
 
 
 
