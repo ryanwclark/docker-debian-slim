@@ -3,7 +3,7 @@ Stupid simple Debian build
 
 [![GitHub release](https://img.shields.io/github/v/tag/ryanwclark/docker-debian?style=flat-square)](https://github.com/ryanwclark/docker-debian/releases/latest)
 [![Build Status](https://img.shields.io/github/workflow/status/ryanwclark/docker-debian/build?style=flat-square)](https://github.com/ryanwclark/docker-debian/actions?query=workflow%3Abuild)
-[![Docker Stars](https://img.shields.io/docker/stars/ryanwclark/debian.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/ryanwclark/debian/)
+[![Docker Stars](https://img.shields.io/docker/stars/ryanwclark/debian.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/ryanwclark/debian-slim/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ryanwclark/debian.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/ryanwclark/debian/)
 [![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white)](https://www.debian.org/)
 
