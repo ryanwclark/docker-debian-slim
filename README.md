@@ -21,10 +21,6 @@ Dockerfile to build an [debian](https://www.debian.org/) container image to be u
 * Logshipping capabilities
 * Ability to update User ID and Group ID permissions dynamically.
 
-## Maintainer
-
-- [Ryan Clark](https://github.com/ryanwclark)
-
 ## Table of Contents
 
 - [About](#about)
