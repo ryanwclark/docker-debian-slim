@@ -9,6 +9,7 @@ Stupid simple Debian build
 
 * * *
 ## About
+![Debian Logo](debian.svg)
 
 Dockerfile to build an [debian](https://www.debian.org/) container image to be used as a base for building other images.
 
