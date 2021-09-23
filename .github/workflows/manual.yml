@@ -26,13 +26,13 @@ jobs:
             case ${BRANCH} in
               "main" | "master" )
                   if [ -n "${{ secrets.LATEST }}" ] ; then
-                    if [ "${RELEASE}-slim" = "${{ secrets.LATEST }}" ]; then
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest,${DOCKER_IMAGE}:latest"
+                    if [ "${RELEASE}" = "${{ secrets.LATEST }}" ]; then
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
                     else
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE-latest}"
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE-latest}"
                     fi
                   else
-                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest"
+                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest"
                   fi
                 ;;
               "develop" )
@@ -53,7 +53,7 @@ jobs:
           fi
 
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}-slim"
+            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}"
           fi
 
           if [ -n "${BRANCHTAG}" ] && [ -n "${GITTAG}" ]; then
@@ -105,7 +105,7 @@ jobs:
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}-slim|g" Dockerfile
+          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}|g" Dockerfile
 
       - name: Build
         uses: docker/build-push-action@v2
@@ -134,13 +134,13 @@ jobs:
             case ${BRANCH} in
               "main" | "master" )
                   if [ -n "${{ secrets.LATEST }}" ] ; then
-                    if [ "${RELEASE}-slim" = "${{ secrets.LATEST }}" ]; then
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest,${DOCKER_IMAGE}:latest"
+                    if [ "${RELEASE}" = "${{ secrets.LATEST }}" ]; then
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
                     else
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE-latest}"
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE-latest}"
                     fi
                   else
-                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest"
+                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest"
                   fi
                 ;;
               "develop" )
@@ -161,7 +161,7 @@ jobs:
           fi
 
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}-slim"
+            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}"
           fi
 
           if [ -n "${BRANCHTAG}" ] && [ -n "${GITTAG}" ]; then
@@ -213,7 +213,7 @@ jobs:
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}-slim|g" Dockerfile
+          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}|g" Dockerfile
 
       - name: Build
         uses: docker/build-push-action@v2
@@ -242,13 +242,13 @@ jobs:
             case ${BRANCH} in
               "main" | "master" )
                   if [ -n "${{ secrets.LATEST }}" ] ; then
-                    if [ "${RELEASE}-slim" = "${{ secrets.LATEST }}" ]; then
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest,${DOCKER_IMAGE}:latest"
+                    if [ "${RELEASE}" = "${{ secrets.LATEST }}" ]; then
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
                     else
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE-latest}"
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE-latest}"
                     fi
                   else
-                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest"
+                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest"
                   fi
                 ;;
               "develop" )
@@ -269,7 +269,7 @@ jobs:
           fi
 
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}-slim"
+            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}"
           fi
 
           if [ -n "${BRANCHTAG}" ] && [ -n "${GITTAG}" ]; then
@@ -321,7 +321,7 @@ jobs:
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}-slim|g" Dockerfile
+          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}|g" Dockerfile
 
       - name: Build
         uses: docker/build-push-action@v2
@@ -350,13 +350,13 @@ jobs:
             case ${BRANCH} in
               "main" | "master" )
                   if [ -n "${{ secrets.LATEST }}" ] ; then
-                    if [ "${RELEASE}-slim" = "${{ secrets.LATEST }}" ]; then
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest,${DOCKER_IMAGE}:latest"
+                    if [ "${RELEASE}" = "${{ secrets.LATEST }}" ]; then
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
                     else
-                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE-latest}"
+                      BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE-latest}"
                     fi
                   else
-                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-slim,${DOCKER_IMAGE}:${RELEASE}-slim-latest"
+                     BRANCHTAG="${DOCKER_IMAGE}:${RELEASE},${DOCKER_IMAGE}:${RELEASE}-latest"
                   fi
                 ;;
               "develop" )
@@ -377,7 +377,7 @@ jobs:
           fi
 
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}-slim"
+            GITTAG="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed 's|refs/tags/||g')_${RELEASE}"
           fi
 
           if [ -n "${BRANCHTAG}" ] && [ -n "${GITTAG}" ]; then
@@ -429,7 +429,7 @@ jobs:
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}-slim|g" Dockerfile
+          sed -i "s|FROM debian:.*|FROM debian:${RELEASE}|g" Dockerfile
 
       - name: Build
         uses: docker/build-push-action@v2
